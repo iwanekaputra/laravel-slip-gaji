@@ -11,46 +11,29 @@
                   <div class="col-12 col-md-6 col-lg-12">
                       <div class="card">
                         <div class="card-header">
-                      <a href="{{ route('admin.slip-gaji.create') }}" class="btn btn-primary">+ Tambah Slip Gaji</a>
-                  </div>
+                                <a href="{{ route('admin.slip-gaji.create') }}" class="btn btn-primary">+ Tambah Slip Gaji</a>
+                        </div>
+
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-bordered table-md">
                         <tr>
-                          <th>#</th>
+                          <th>No</th>
                           <th>Name</th>
-                          <th>Created At</th>
-                          <th>Status</th>
+                          <th>Kirim Ke Wa</th>
                           <th>Action</th>
                         </tr>
+                        @forelse ($slipSalaries as $slipSalary)
                         <tr>
-                          <td>1</td>
-                          <td>Irwansyah Saputra</td>
-                          <td>2017-01-09</td>
-                          <td><div class="badge badge-success">Active</div></td>
-                          <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Hasan Basri</td>
-                          <td>2017-01-09</td>
-                          <td><div class="badge badge-success">Active</div></td>
-                          <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Kusnadi</td>
-                          <td>2017-01-11</td>
-                          <td><div class="badge badge-danger">Not Active</div></td>
-                          <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Rizal Fakhri</td>
-                          <td>2017-01-11</td>
-                          <td><div class="badge badge-success">Active</div></td>
-                          <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                        </tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $slipSalary->employee->nama }}</td>
+                            <td><div class="badge badge-success">Sudah Terkirim</div></td>
+                            <td><a href="{{ route('admin.slip-gaji.show', $slipSalary->id) }}" class="btn btn-secondary">Detail</a></td>
+                          </tr>
+                        @empty
+
+                        @endforelse
+
                       </table>
                     </div>
                   </div>
