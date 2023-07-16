@@ -209,9 +209,6 @@
                </div>
              </div>
             </form>
-            <div class="col-lg-12 text-right mb-5">
-                <a class="btn btn-primary w-100" wire:click="export">Simpan</a>
-            </div>
            </section>
          </div>
    </div>
