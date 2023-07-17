@@ -7,12 +7,12 @@
                <h1>Tambah Slip Gaji</h1>
              </div>
 
-            <form wire:submit.prevent="store">
+            <form wire:submit.prevent="update">
              <div class="section-body">
                  <div class="row">
                      <div class="card-body">
                         <div class="row">
-                            <div class="col-lg-11">
+                            <div class="col-lg-12">
                                 <div class="form-group">
                                     <label>Nama</label>
                                     @error('nama')
@@ -21,12 +21,6 @@
                                         </div>
                                     @enderror
                                     <input type="text" class="form-control" name="nama" wire:model="nama">
-                                </div>
-                            </div>
-                            <div class="col-lg-1">
-                                <div class="form-group">
-                                    <label>Cari Karyawan</label>
-                                    <button class="btn btn-primary form-control" wire:click="searchEmployee" type="button"><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
                             <div class="col-lg-12">

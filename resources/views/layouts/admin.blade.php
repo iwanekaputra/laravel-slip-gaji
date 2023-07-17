@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/components.css">
 <!-- Start GA -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -60,5 +61,36 @@
   <script src="/js/scripts.js"></script>
   <script src="/js/custom.js"></script>
   @livewireScripts
+  <script type="module">
+      import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
+  <script>
+    window.addEventListener('swal:modal', event => {
+            swal({
+                title: event.detail.message,
+                text: event.detail.text,
+                icon: event.detail.type,
+                timer : 3000
+            }).then(function () {
+                window.livewire.emit(event.detail.redirect);
+            });
+        });
+
+        window.addEventListener('swal:confirm', event => {
+            swal({
+            title: event.detail.message,
+            text: event.detail.text,
+            icon: event.detail.type,
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                window.livewire.emit(event.detail.action);
+            }
+            });
+        });
+  </script>
 </body>
 </html>

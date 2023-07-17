@@ -16,6 +16,9 @@ class CreateSlipSalariesTable extends Migration
         Schema::create('slip_salaries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employee_id');
+            $table->string('file_pdf')->nullable();
+            $table->string('jumlah_potongan')->nullable();
+            $table->string('gaji_bersih')->nullable();
             $table->string('bank_bjb')->nullable();
             $table->string('ukan_korpri')->nullable();
             $table->string('iuran_korpri')->nullable();
