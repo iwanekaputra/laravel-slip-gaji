@@ -13,6 +13,25 @@
                         <div class="card-header">
                                 <a href="{{ route('admin.slip-gaji.create') }}" class="btn btn-primary">+ Tambah Slip Gaji</a>
                         </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <label>Bulan</label>
+                                    <select class="form-control" wire:model="month">
+                                        <option value="07">Juli 2023</option>
+                                        <option value="08">Agustus 2023</option>
+                                        <option value="09">September 2023</option>
+                                        <option value="10">Oktober 2023</option>
+                                        <option value="11">November 2023</option>\
+                                        <option value="12">Desember 2023</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <button href="{{ route('admin.slip-gaji.create') }}" class="btn btn-success">Kirim wa -></button>
+                        </div>
 
                   <div class="card-body">
                     <div class="table-responsive">
@@ -20,15 +39,20 @@
                         <tr>
                           <th>No</th>
                           <th>Name</th>
-                          <th>Kirim Ke Wa</th>
+                          <th>Pdf</th>
                           <th>Action</th>
                         </tr>
                         @forelse ($slipSalaries as $slipSalary)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $slipSalary->employee->nama }}</td>
-                            <td><div class="badge badge-success">Sudah Terkirim</div></td>
-                            <td><a href="{{ route('admin.slip-gaji.show', $slipSalary->id) }}" class="btn btn-secondary">Detail</a></td>
+                            <td><a href="{{ asset("pdf/" . $slipSalary->file_pdf) }}" target="_blank">{{ $slipSalary->file_pdf }}</a></td>
+                            <td>
+                                <a href="{{ route('admin.slip-gaji.show', $slipSalary->id) }}" class="btn btn-info">Detail</a>
+                                <a href="{{ route('admin.slip-gaji.edit', $slipSalary->id) }}" class="btn btn-secondary">Edit</a>
+                                <button type="button" class="btn btn-danger" wire:click="delete({{ $slipSalary->id }})">Hapus</button>
+                            </td>
+
                           </tr>
                         @empty
 

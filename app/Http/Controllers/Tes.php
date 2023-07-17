@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SlipSalary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use PDF;
@@ -9,24 +10,18 @@ use PDF;
 
 class Tes extends Controller
 {
-    public function tes() {
+    public function tes($id) {
         // retreive all records from db
-        $data = ['d'];
-        $pdf = PDF::loadView('pdf.slip-gaji', $data);
+        $data = SlipSalary::find($id);
+        $pdf = PDF::loadView('pdf.slip-gaji', ['slip' => $data]);
+        $namePdf = time() .'.pdf';
+        $pdf->save('pdf/' . $namePdf);
+
+        $data->update([
+            'file_pdf' => $namePdf
+        ]);
+
         return $pdf->stream();
-
-
-        //Getting image
-// $image=public_path('images/logo.png');
-// $imagedata=base64_encode($image);
-// $imgpath='<img src="'. public_path('images/logo.png') .'">';
-
-// $HTML='<body><div>'.$imgpath.'</div></body>';
-
-
-// // dompdf=new Dompdf($options);
-// $pdf = PDF::loadHTML($HTML);
-//         return $pdf->stream();
 
     }
 }
