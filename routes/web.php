@@ -25,12 +25,11 @@ Route::get('/', function () {
 });
 
 Route::post('/', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/pdf/{id}', [Tes::class, 'tes'])->name('tes');
 
-
-Route::get('/admin/slip-gaji', AdminSlipGaji::class)->name('admin.slip-gaji');
-Route::get('/admin/slip-gaji/create', AdminSlipGajiCreate::class)->name('admin.slip-gaji.create');
-Route::get('/admin/slip-gaji/{slipSalary}', AdminSlipGajiShow::class)->name('admin.slip-gaji.show');
-Route::get('/admin/slip-gaji/edit/{slipSalary}', AdminSlipGajiEdit::class)->name('admin.slip-gaji.edit');
+Route::get('/admin/slip-gaji', AdminSlipGaji::class)->name('admin.slip-gaji')->middleware('auth');
+Route::get('/admin/slip-gaji/create', AdminSlipGajiCreate::class)->name('admin.slip-gaji.create')->middleware('auth');
+Route::get('/admin/slip-gaji/{slipSalary}', AdminSlipGajiShow::class)->name('admin.slip-gaji.show')->middleware('auth');
+Route::get('/admin/slip-gaji/edit/{slipSalary}', AdminSlipGajiEdit::class)->name('admin.slip-gaji.edit')->middleware('auth');
 
