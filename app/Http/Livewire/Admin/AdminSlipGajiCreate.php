@@ -7,6 +7,8 @@ use App\Models\SlipSalary;
 use App\Models\User;
 use Livewire\Component;
 use PDF;
+use Illuminate\Support\Str;
+
 class AdminSlipGajiCreate extends Component
 {
 
