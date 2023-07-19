@@ -25,8 +25,8 @@
                             </div>
                             <div class="col-lg-1">
                                 <div class="form-group">
-                                    <label>Cari Karyawan</label>
-                                    <button class="btn btn-primary form-control" wire:click="searchEmployee" type="button"><i class="fas fa-search"></i></button>
+                                    <label>Cari Pegawai</label>
+                                    <button class="btn btn-primary form-control" type="button"><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -81,7 +81,7 @@
                                             {{ $message }}
                                         </div>
                                     @enderror
-                                    <input type="text" class="form-control" name="pendapatan" wire:model="pendapatan">
+                                    <input type="number" class="form-control" name="pendapatan" wire:model="pendapatan">
                                 </div>
                             </div>
                             <div class="col-lg-6">
