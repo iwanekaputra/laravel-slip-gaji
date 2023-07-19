@@ -70,7 +70,7 @@ class AdminSlipGajiCreate extends Component
 
             $data = SlipSalary::find($slipSalary->id);
             $pdf = PDF::loadView('pdf.slip-gaji', ['slip' => $data]);
-            $namePdf = $slipSalary->employee->nama. '-Juli 2023' . '-slip gaji.pdf';
+            $namePdf = Str::slug($slipSalary->employee->nama, '-') . '-Juli-2023' . '-slip-gaji.pdf';
             $pdf->save('pdf/' . $namePdf);
 
             $data->update([
