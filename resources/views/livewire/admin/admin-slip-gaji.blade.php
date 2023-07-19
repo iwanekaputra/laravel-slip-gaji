@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="card-body">
-                            <button href="{{ route('admin.slip-gaji.create') }}" class="btn btn-success">Kirim wa -></button>
+                            <button class="btn btn-success" wire:click="sendWa">Kirim wa -></button>
                         </div>
 
                   <div class="card-body">

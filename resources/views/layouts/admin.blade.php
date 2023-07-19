@@ -73,7 +73,7 @@
                 icon: event.detail.type,
                 timer : 3000
             }).then(function () {
-                window.livewire.emit(event.detail.redirect);
+                window.livewire.emit(event.detail.action);
             });
         });
 
