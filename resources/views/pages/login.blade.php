@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Login &mdash; Stisla</title>
+    <title>Login &mdash; Inspektorat Kab. Kuningan</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="/modules/bootstrap/css/bootstrap.min.css">
@@ -44,7 +44,7 @@
                         </div>
                         <h4 class="text-center mb-3">System Aplikasi Penggajian Inspektorat Kab. Kuningan</h4>
 
-                    
+
             <div class="card card-primary">
               <div class="card-header"><h4>Login</h4></div>
               @if(session('error'))
