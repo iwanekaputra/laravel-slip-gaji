@@ -39,6 +39,7 @@
                         <tr>
                           <th>No</th>
                           <th>Name</th>
+                          <th>No wa</th>
                           <th>Pdf</th>
                           <th>Action</th>
                         </tr>
@@ -46,6 +47,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $slipSalary->employee->nama }}</td>
+                            <td>{{ $slipSalary->employee->nowa }}</td>
                             <td><a href="{{ asset("pdf/" . $slipSalary->file_pdf) }}" target="_blank">{{ $slipSalary->file_pdf }}</a></td>
                             <td>
                                 <a href="{{ route('admin.slip-gaji.show', $slipSalary->id) }}" class="btn btn-info">Detail</a>
