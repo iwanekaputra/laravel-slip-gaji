@@ -6,6 +6,8 @@ use App\Models\Employee;
 use App\Models\SlipSalary;
 use Livewire\Component;
 use PDF;
+use Illuminate\Support\Str;
+
 
 class AdminSlipGajiEdit extends Component
 {
@@ -105,7 +107,7 @@ class AdminSlipGajiEdit extends Component
         ]);
 
         $pdf = PDF::loadView('pdf.slip-gaji', ['slip' => $slipSalary]);
-        $namePdf = time() .'.pdf';
+        $namePdf = Str::slug($slipSalary->employee->nama, '-') . '-Juli-2023' . '-slip-gaji.pdf';
         $pdf->save('pdf/' . $namePdf);
 
         $slipSalary->update([
