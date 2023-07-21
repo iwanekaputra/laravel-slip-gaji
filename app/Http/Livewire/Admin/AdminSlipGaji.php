@@ -57,49 +57,24 @@ class AdminSlipGaji extends Component
 
         foreach($slipSalaries as $slipSalary) {
             $curl = curl_init();
-            $payload = [
-                "data" => [
-                    [
-                        'phone' => $slipSalary->employee->nowa,
-                        'document' => asset('pdf/' . $slipSalary->file_pdf),
-                    ]
-                ]
-            ];
-            curl_setopt($curl, CURLOPT_HTTPHEADER,
-                array(
-                    "Authorization: JR4rxGLIeUp3OnoKytualp16oJSPyR1sPgzykPIg60nLn3xGiyfPEy1uKSfh5ODt",
-                    "Content-Type: application/json"
-                )
-            );
-            curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
-            curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/v2/send-document");
-            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-
-            $result = curl_exec($curl);
-            curl_close($curl);
-            echo "<pre>";
-            print_r($result);
-
-
-            $curl = curl_init();
+            $token = "JR4rxGLIeUp3OnoKytualp16oJSPyR1sPgzykPIg60nLn3xGiyfPEy1uKSfh5ODt";
             $data = [
             'phone' => $slipSalary->employee->nowa,
-            'message' => 'Selamat pagi.. Berikut disampaikan slip gaji bulan juli. Terimakasih..',
+            'document' => asset('pdf/' . $slipSalary->file_pdf),
+            'caption' => 'Selamat pagi.. Berikut disampaikan slip gaji bulan juli. Terimakasih..',
             ];
             curl_setopt($curl, CURLOPT_HTTPHEADER,
                 array(
-                    "Authorization: JR4rxGLIeUp3OnoKytualp16oJSPyR1sPgzykPIg60nLn3xGiyfPEy1uKSfh5ODt",
+                    "Authorization: $token",
                 )
             );
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-            curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/send-message");
+            curl_setopt($curl, CURLOPT_URL,  "https://solo.wablas.com/api/send-document");
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+
             $result = curl_exec($curl);
             curl_close($curl);
             echo "<pre>";
