@@ -61,7 +61,12 @@ class AdminSlipGaji extends Component
             $data = [
             'phone' => $slipSalary->employee->nowa,
             'document' => asset('pdf/' . $slipSalary->file_pdf),
-            'caption' => 'Selamat pagi.. Berikut disampaikan slip gaji bulan juli. Terimakasih..',
+            'caption' => 'Assalamualaikum Wr.Wb.
+            Yth. Bapak/Ibu Pegawai Inspektorat Kabupaten Kuningan.
+            Mohon izin menyampaikan informasi rincian gaji (slip gaji) bulan juli tahun 2023 melalui media elektronik (Whatsapp personal).
+            Bagi Bapak/Ibu yang menghendaki untuk tetap diprint, bisa menghubungi bagian keuangan (Ibu Sri).
+            Demikian informasi yang dapat disampaikan, terimakasih atas perhatiannya.
+            Wassalamualaikum Wr. Wb.',
             ];
             curl_setopt($curl, CURLOPT_HTTPHEADER,
                 array(
