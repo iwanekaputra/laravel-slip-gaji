@@ -96,7 +96,7 @@
             </table>
             <div style="border: 2px solid black"></div>
             <table >
-                <tr style="border : 1px solid black">
+                <tr style="border : 1px dashed black">
                     <td style="width : 300px; border-bottom : 1px dashed black;">- Bank BJB</td>
                     <td style="width : 20%; border-bottom : 1px dashed black;">Rp</td>
                     <td style="width : 160px; border-bottom : 1px dashed black;">{{ $slip->bank_bjb != '-' ? number_format($slip->bank_bjb, 0, ',', '.') : '-' }}</td>

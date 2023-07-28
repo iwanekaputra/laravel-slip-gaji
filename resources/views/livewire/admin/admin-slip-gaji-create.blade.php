@@ -12,9 +12,12 @@
                  <div class="row">
                      <div class="card-body">
                         <div class="row">
+                            <div class="col-lg-12 mb-4">
+                                <h3>Data Pegawai</h3>
+                            </div>
                             <div class="col-lg-11">
                                 <div class="form-group">
-                                    <label>Nama</label>
+                                    <label>Nama <span class="text-danger">*</span></label>
                                     @error('nama')
                                         <div class="text-danger">
                                             {{ $message }}
@@ -25,13 +28,13 @@
                             </div>
                             <div class="col-lg-1">
                                 <div class="form-group">
-                                    <label>Cari Pegawai</label>
+                                    <label>Cari Pegawai <span class="text-danger">*</span></label>
                                     <button class="btn btn-primary form-control" type="button"><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>NIP</label>
+                                    <label>NIP <span class="text-danger">*</span></label>
                                     @error('nip')
                                         <div class="text-danger">
                                             {{ $message }}
@@ -42,7 +45,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>NO WA</label>
+                                    <label>NO WA <span class="text-danger">*</span></label>
                                     @error('nowa')
                                         <div class="text-danger">
                                             {{ $message }}
@@ -53,7 +56,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>NPWP</label>
+                                    <label>NPWP  <span class="text-danger">*</span></label>
                                     @error('npwp')
                                         <div class="text-danger">
                                             {{ $message }}
@@ -64,7 +67,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>JABATAN</label>
+                                    <label>JABATAN <span class="text-danger">*</span></label>
                                     @error('jabatan')
                                         <div class="text-danger">
                                             {{ $message }}
@@ -75,7 +78,7 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <label>PENDAPATAN</label>
+                                    <label>PENDAPATAN <span class="text-danger">*</span></label>
                                     @error('pendapatan')
                                         <div class="text-danger">
                                             {{ $message }}
@@ -84,6 +87,11 @@
                                     <input type="number" class="form-control" name="pendapatan" wire:model="pendapatan">
                                 </div>
                             </div>
+
+                            <div class="col-lg-12 mt-4 mb-4">
+                                <h3>Potongan-potongan</h3>
+                            </div>
+
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label>Bank BJB</label>
