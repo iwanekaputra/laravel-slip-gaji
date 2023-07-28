@@ -16,7 +16,7 @@ class AdminSlipGajiCreate extends Component
     public $bank_bjb, $ukan_korpri, $iuran_korpri, $bjb_syariah, $simp_kop_insp, $shr_kop_insp, $potongan_kop_insp, $arisan_kop_insp, $simp_kokar, $koperasi_ciremai, $arisan_dharma_wanita, $iuran_dharma_wanita, $rereongan_sarupi, $zakat_infak, $konsumsi, $btn, $zakat_fitrah, $dana_pendidikan_dan_pmi, $bpr_kuningan, $shr_kokar, $potongan_kokar, $ang_barang_koperasi;
 
     protected $rules = [
-        'nama' => 'required',
+        'nama' => 'required|unique:employees',
         'nip' => 'required',
         'npwp' => 'required',
         'jabatan' => 'required',
