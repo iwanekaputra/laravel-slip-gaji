@@ -52,7 +52,7 @@ class AdminSlipGaji extends Component
     }
 
     public function redirectIndex() {
-        $slipSalaries = SlipSalary::whereMonth('created_at', $this->month ?? '07')->latest()->get();
+        $slipSalaries = SlipSalary::whereMonth('created_at', $this->month ?? '08')->latest()->get();
 
 
         foreach($slipSalaries as $slipSalary) {
