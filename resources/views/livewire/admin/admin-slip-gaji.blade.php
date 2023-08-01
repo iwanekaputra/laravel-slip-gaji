@@ -18,7 +18,6 @@
                                 <div class="col-lg-2">
                                     <label>Bulan</label>
                                     <select class="form-control" wire:model="month">
-                                        <option value="07">Juli 2023</option>
                                         <option value="08">Agustus 2023</option>
                                         <option value="09">September 2023</option>
                                         <option value="10">Oktober 2023</option>

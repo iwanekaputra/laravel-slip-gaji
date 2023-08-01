@@ -61,7 +61,7 @@ class AdminSlipGaji extends Component
             $data = [
             'phone' => $slipSalary->employee->nowa,
             'document' => asset('pdf/' . $slipSalary->file_pdf),
-            'caption' => 'Assalamualaikum Wr.Wb. Yth. Bapak/Ibu Pegawai Inspektorat Kabupaten Kuningan. Mohon izin menyampaikan informasi rincian gaji (slip gaji) bulan juli tahun 2023 melalui media elektronik (Whatsapp personal). Bagi Bapak/Ibu yang menghendaki untuk tetap diprint, bisa langsung membalas pesan ini. Demikian informasi yang dapat disampaikan, terimakasih atas perhatiannya. Wassalamualaikum Wr. Wb.',
+            'caption' => 'Assalamualaikum Wr.Wb. Yth. Bapak/Ibu Pegawai Inspektorat Kabupaten Kuningan. Mohon izin menyampaikan informasi rincian gaji (slip gaji) bulan agustus tahun 2023 melalui media elektronik (Whatsapp personal). Bagi Bapak/Ibu yang menghendaki untuk tetap diprint, bisa langsung membalas pesan ini. Demikian informasi yang dapat disampaikan, terimakasih atas perhatiannya. Wassalamualaikum Wr. Wb.',
             ];
             curl_setopt($curl, CURLOPT_HTTPHEADER,
                 array(
@@ -89,7 +89,7 @@ class AdminSlipGaji extends Component
     public function render()
     {
         return view('livewire.admin.admin-slip-gaji', [
-            'slipSalaries' => SlipSalary::whereMonth('created_at', $this->month ?? '07')->latest()->paginate(10)
+            'slipSalaries' => SlipSalary::whereMonth('created_at', $this->month ?? '08')->latest()->paginate(10)
         ])->extends('layouts.admin');
     }
 }
