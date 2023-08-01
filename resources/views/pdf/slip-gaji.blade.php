@@ -20,7 +20,7 @@
     <div style="width: 70%; margin : 0 auto">
         <div class="row">
             <h2>SLIP GAJI <i style="float: right; font-weight: normal;
-                ">Juli 2023</i></h2>
+                ">Agustus 2023</i></h2>
         </div>
         <div class="row bg-danger">
             <table class="mt-3">
